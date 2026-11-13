@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sindika Plus &mdash; &#1058;&#1077;&#1093;&#1094;&#1077;&#1085;&#1090;&#1088;, &#1082;&#1091;&#1079;&#1086;&#1074;&#1085;&#1086;&#1081; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090; &#1080; &#1096;&#1080;&#1085;&#1086;&#1084;&#1086;&#1085;&#1090;&#1072;&#1078; &#1074; &#1057;&#1086;&#1089;&#1077;&#1085;&#1082;&#1072;&#1093;</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-user-select: none; user-select: none; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #0c0e12; color: #f8fafc; line-height: 1.5; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 18px; }
+    .watermark { position: fixed; inset: 0; z-index: 9999; pointer-events: none; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .watermark span { font-size: 32px; font-weight: 900; color: rgba(245, 158, 11, 0.08); transform: rotate(-28deg); white-space: nowrap; letter-spacing: 3px; }
+    header { background: #13171f; border-bottom: 1px solid #232a36; padding: 14px 0; position: sticky; top: 0; z-index: 50; }
+    .header-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .logo-name { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
+    .logo-name span { color: #f59e0b; }
+    .logo-tag { font-size: 10px; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #090d16; font-weight: 800; padding: 12px 18px; border-radius: 10px; border: none; cursor: pointer; font-size: 14px; text-align: center; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3); }
+    .btn-dark { display: inline-block; background: #1e2530; color: #f8fafc; font-weight: 600; padding: 12px 18px; border-radius: 10px; border: 1px solid #334155; font-size: 14px; text-align: center; }
+    .hero { padding: 44px 0; background: radial-gradient(circle at top right, #1f2633 0%, #0c0e12 65%); border-bottom: 1px solid #232a36; }
+    .pill { display: inline-block; background: rgba(245, 158, 11, 0.14); border: 1px solid rgba(245, 158, 11, 0.35); color: #fcd34d; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 18px; }
+    h1 { font-size: 30px; line-height: 1.2; margin-bottom: 14px; font-weight: 800; }
+    h1 span { color: #f59e0b; }
+    .hero-desc { color: #cbd5e1; font-size: 15px; max-width: 660px; margin-bottom: 24px; }
+    .btn-group { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+    .loc { font-size: 13px; color: #94a3b8; }
+    .sec { padding: 44px 0; }
+    .sec-head { font-size: 24px; font-weight: 800; margin-bottom: 22px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+    .card { background: #13171f; border: 1px solid #232a36; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card h3 { font-size: 17px; margin-bottom: 8px; color: #fff; }
+    .card p { font-size: 13px; color: #9ca3af; margin-bottom: 18px; }
+    .price-tag { font-size: 17px; font-weight: 800; color: #f59e0b; margin-bottom: 12px; }
+    .card-action { width: 100%; background: #1e2530; color: #fff; border: 1px solid #334155; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; }
+    .trust-sec { background: #10141c; border-top: 1px solid #232a36; border-bottom: 1px solid #232a36; }
+    .trust-box { background: #0c0e12; border: 1px solid #232a36; border-radius: 12px; padding: 18px; }
+    .trust-val { font-size: 20px; font-weight: 800; color: #f59e0b; margin-bottom: 6px; }
+    footer { padding: 36px 0; background: #08090c; color: #94a3b8; font-size: 13px; }
+    .foot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; margin-bottom: 22px; }
+    .foot-h { color: #fff; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
+    .modal-card { background: #13171f; border: 1px solid #f59e0b; border-radius: 14px; padding: 22px; max-width: 380px; width: 100%; position: relative; }
+    .x-btn { position: absolute; top: 12px; right: 14px; background: none; border: none; color: #94a3b8; font-size: 22px; cursor: pointer; }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+
+  <div class="watermark"><span>&#1044;&#1045;&#1052;&#1054;-&#1042;&#1045;&#1056;&#1057;&#1048;&#1071; &bull; SINDIKA PLUS</span></div>
+
+  <header>
+    <div class="container header-row">
+      <div>
+        <div class="logo-name">SINDIKA <span>PLUS</span></div>
+        <div class="logo-tag">&#1058;&#1077;&#1093;&#1094;&#1077;&#1085;&#1090;&#1088; &bull; &#1050;&#1091;&#1079;&#1086;&#1074;&#1085;&#1086;&#1081; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090; &bull; &#1064;&#1080;&#1085;&#1086;&#1084;&#1086;&#1085;&#1090;&#1072;&#1078;</div>
+      </div>
+      <a href="tel:+74957406909" class="btn">&#1047;&#1072;&#1087;&#1080;&#1089;&#1072;&#1090;&#1100;&#1089;&#1103;</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="pill">&#9733; 4.9 (752 &#1086;&#1094;&#1077;&#1085;&#1082;&#1080;) &bull; &#1061;&#1086;&#1088;&#1086;&#1096;&#1077;&#1077; &#1084;&#1077;&#1089;&#1090;&#1086; 2026</div>
+      <h1>&#1050;&#1086;&#1084;&#1087;&#1083;&#1077;&#1082;&#1089;&#1085;&#1099;&#1081; &#1072;&#1074;&#1090;&#1086;&#1089;&#1077;&#1088;&#1074;&#1080;&#1089; &#1080; &#1082;&#1091;&#1079;&#1086;&#1074;&#1085;&#1086;&#1081; &#1088;&#1077;&#1084;&#1086;&#1085;&#1090; &#1074; <span>&#1057;&#1086;&#1089;&#1077;&#1085;&#1082;&#1072;&#1093;</span></h1>
+      <p class="hero-desc">&#1055;&#1083;&#1072;&#1085;&#1086;&#1074;&#1086;&#1077; &#1058;&#1054;, &#1082;&#1086;&#1084;&#1087;&#1100;&#1102;&#1090;&#1077;&#1088;&#1085;&#1072;&#1103; &#1076;&#1080;&#1072;&#1075;&#1085;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072;, &#1088;&#1077;&#1084;&#1086;&#1085;&#1090; &#1076;&#1074;&#1080;&#1075;&#1072;&#1090;&#1077;&#1083;&#1077;&#1081; &#1080; &#1050;&#1055;&#1055;, &#1087;&#1086;&#1082;&#1088;&#1072;&#1089;&#1082;&#1072; &#1082;&#1091;&#1079;&#1086;&#1074;&#1072;, &#1096;&#1080;&#1085;&#1086;&#1084;&#1086;&#1085;&#1090;&#1072;&#1078; &#1080; &#1089;&#1093;&#1086;&#1076;-&#1088;&#1072;&#1079;&#1074;&#1072;&#1083;. &#1047;&#1072;&#1087;&#1095;&#1072;&#1089;&#1090;&#1080; &#1074; &#1085;&#1072;&#1083;&#1080;&#1095;&#1080;&#1080; &#1080; &#1087;&#1086;&#1076; &#1079;&#1072;&#1082;&#1072;&#1079; &#1074; &#1076;&#1077;&#1085;&#1100; &#1086;&#1073;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1103;.</p>
+      <div class="btn-group">
+        <a href="tel:+74957406909" class="btn">&#1055;&#1086;&#1079;&#1074;&#1086;&#1085;&#1080;&#1090;&#1100;: +7 (495) 740-69-09</a>
+        <a href="https://yandex.ru" target="_blank" class="btn-dark">&#1055;&#1086;&#1089;&#1090;&#1088;&#1086;&#1080;&#1090;&#1100; &#1084;&#1072;&#1088;&#1096;&#1088;&#1091;&#1090;</a>
+      </div>
+      <div class="loc">&#1052;&#1086;&#1089;&#1082;&#1074;&#1072;, &#1076;. &#1057;&#1086;&#1089;&#1077;&#1085;&#1082;&#1080;, 7 (&#1088;&#1103;&#1076;&#1086;&#1084; &#1089; &#1084;. &#1054;&#1083;&#1100;&#1093;&#1086;&#1074;&#1072;&#1103; &#1080; &#1050;&#1086;&#1084;&#1084;&#1091;&#1085;&#1072;&#1088;&#1082;&#1086;&#1081;) &bull; &#1045;&#1078;&#1077;&#1076;&#1085;&#1077;&#1074;&#1085;&#1086; &#1076;&#1086; 21:00</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <h2 class="sec-head">&#1042;&#1089;&#1077; &#1091;&#1089;&#1083;&#1091;&#1075;&#1080; &#1090;&#1077;&#1093;&#1094;&#1077;&#1085;&#1090;&#1088;&#1072;</h2>
+      <div class="cards">
+        <!-- 1 -->
+        <div class="card">
+          <div>
+            <h3>&#1055;&#1083;&#1072;&#1085;&#1086;&#1074;&#1086;&#1077; &#1058;&#1054; &#1080; &#1079;&#1072;&#1084;&#1077;&#1085;&#1072; &#1084;&#1072;&#1089;&#1083;&#1072;</h3>
+            <p>&#1050;&#1086;&#1084;&#1087;&#1083;&#1077;&#1082;&#1089;&#1085;&#1086;&#1077; &#1086;&#1073;&#1089;&#1083;&#1091;&#1078;&#1080;&#1074;&#1072;&#1085;&#1080;&#1077; &#1087;&#1086; &#1088;&#1077;&#1075;&#1083;&#1072;&#1084;&#1077;&#1085;&#1090;&#1091;, &#1079;&#1072;&#1084;&#1077;&#1085;&#1072; &#1084;&#1072;&#1089;&#1083;&#1072; &#1074; &#1044;&#1042;&#1057; &#1080; &#1050;&#1055;&#1055;, &#1074;&#1089;&#1077;&#1093; &#1092;&#1080;&#1083;&#1100;&#1090;&#1088;&#1086;&#1074; &#1080; &#1090;&#1077;&#1093;&#1085;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1093; &#1078;&#1080;&#1076;&#1082;&#1086;&#1089;&#1090;&#1077;&#1081;.</p>
+          </div>
+          <div>
+            <div class="price-tag">&#1055;&#1086; &#1079;&#1072;&#1087;&#1080;&#1089;&#1080;</div>
+            <button class="card-action" onclick="openModal('&#1055;&#1083;&#1072;&#1085;&#1086;&#1074;&#1086;&#1077; &#1058;&#1054; &#1080; &#1079;&#1072;&#1084;&#1077;&#1085;&#1072; &#1084;&#1072;&#1089;&#1083;&#1072;')">&#1059;&#1079;&#1085;&#1072;&#1090;&#1100; &#1089;&#1090;&#1086;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100;</button>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+          <div>
+            <h3>&#1050;&#1086;&#1084;&#1087;&#1100;&#1102;&#1090;&#1077;&#1088;&#1085;&#1072;&#1103; &#1076;&#1080;&#1072;&#1075;&#1085;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072;</h3>
